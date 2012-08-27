@@ -1,0 +1,4 @@
+name: TexturePackChanger
+version: 1.0
+main: me.jtjj222.TexturePackChanger.TexturePackChanger
+load: POSTWORLD
