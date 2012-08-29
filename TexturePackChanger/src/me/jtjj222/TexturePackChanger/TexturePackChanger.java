@@ -7,8 +7,7 @@ import net.minecraft.server.EntityPlayer;
 import net.minecraft.server.Packet250CustomPayload;
 
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.craftbukkit.entity.CraftPlayer;
@@ -77,7 +76,7 @@ public class TexturePackChanger extends JavaPlugin implements Listener{
 						String texturePackName = PlayerTexturePacks.get(p.getName());
 					   victim.netServerHandler.sendPacket(getTexturePackChangePacket(TexturePacksbyName.get(texturePackName)));
 				   }
-				}, 60L);
+				}, 50L);
 			
 		} else {
 			p.sendMessage("Please select your texture pack");
@@ -89,14 +88,14 @@ public class TexturePackChanger extends JavaPlugin implements Listener{
 
 		if (e.getAction() != Action.RIGHT_CLICK_BLOCK) return;
 				
-		Block block = e.getClickedBlock();
+		BlockState block = e.getClickedBlock().getState();
 		
-		if (block.getType() == Material.WALL_SIGN) {
-			Sign sign = (Sign) block.getState();
+		if (block instanceof Sign) {
+			Sign sign = (Sign) block;
 			
 			String SignType = sign.getLine(0);
 			
-			if (SignType.contains("[TexturePack]")) {
+			if (SignType.equalsIgnoreCase("[TexturePack]")) {
 				
 				String texturePackName = sign.getLine(1);
 				PlayerTexturePacks.put(e.getPlayer().getName(), texturePackName);

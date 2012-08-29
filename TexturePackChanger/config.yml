@@ -14,5 +14,9 @@ Textures:
     url: http://cdn.planetminecraft.com/files/resource_media/texture/Bordercraft64_18_713219%201.zip
   SMPRevival:
     url: http://cdn.planetminecraft.com/files/resource_media/texture/SMPs-Revival_3224500.zip
-  Default:
-    url: http://0.0.0.0/0.zip   
+  Rustica:
+    url: https://dl.dropbox.com/u/12637402/Rustica.zip
+  Ravencraft:
+    url: https://dl.dropbox.com/u/12637402/Ravencraft.zip
+  Forgottenlands:
+    url: https://dl.dropbox.com/u/12637402/ForgottenLands.zip    
