@@ -56,9 +56,6 @@ public class TexturePackChanger extends JavaPlugin implements Listener{
 		for (String key : PlayerTexturePacks.keySet()) {
 			getConfig().set("Players."+key+".texture", PlayerTexturePacks.get(key));
 		}
-		for (String key : TexturePacksbyName.keySet()) {
-			getConfig().set("Textures."+key+".url", TexturePacksbyName.get(key));
-		}
 		saveConfig();
 	}
 		
