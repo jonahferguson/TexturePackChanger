@@ -1,0 +1,22 @@
+# This config file has been provided for you by jtjj222.
+# The texture packs linked here are not mine; I only linked to them here.
+Players:
+  jtjj222:
+    texture: Cellcraft
+Textures:
+  Cellcraft:
+    url: https://dl.dropbox.com/u/12637402/CellCraft.zip
+  Eldcraft:
+    url: http://eldpack.com/files/eldpack_v3.8b.zip
+  Legopak:
+    url: http://dl.dropbox.com/u/58091919/legopak.zip
+  Bordercraft:
+    url: http://cdn.planetminecraft.com/files/resource_media/texture/Bordercraft64_18_713219%201.zip
+  SMPRevival:
+    url: http://cdn.planetminecraft.com/files/resource_media/texture/SMPs-Revival_3224500.zip
+  Rustica:
+    url: https://dl.dropbox.com/u/12637402/Rustica.zip
+  Ravencraft:
+    url: https://dl.dropbox.com/u/12637402/Ravencraft.zip
+  Forgottenlands:
+    url: https://dl.dropbox.com/u/12637402/ForgottenLands.zip    
