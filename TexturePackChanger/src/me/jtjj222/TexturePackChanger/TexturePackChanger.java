@@ -3,15 +3,10 @@ package me.jtjj222.TexturePackChanger;
 import java.util.HashMap;
 import java.util.Set;
 
-import net.minecraft.server.v1_4_6.EntityPlayer;
-import net.minecraft.server.v1_4_6.Packet;
-import net.minecraft.server.v1_4_6.Packet250CustomPayload;
-
 import org.bukkit.ChatColor;
 import org.bukkit.block.BlockState;
 import org.bukkit.block.Sign;
 import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.craftbukkit.v1_4_6.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -109,12 +104,17 @@ public class TexturePackChanger extends JavaPlugin implements Listener{
 	
 	public void changeTexturePack(Player p, String url) {
 		if (url == null) p.sendMessage("I'm sorry, I couldn't change your texture pack because the texture pack you chose hadn't been configured properly. There is no url for it set.");
-		
-		EntityPlayer player = (EntityPlayer) (((CraftPlayer)p).getHandle());
-		player.playerConnection.sendPacket(getTexturePackChangePacket(url));
-		
+		p.setTexturePack(url); //The lazy way
 	}
 
+	/*
+	 * I used to have to send a custom payload packet to change the texture pack. Due to the nms refactoring, bukkit now provides a
+	 * method to do this for me. Here is the original code for those of you who are interested.
+	 */
+	
+	/*EntityPlayer player = (EntityPlayer) (((CraftPlayer)p).getHandle());
+	player.playerConnection.sendPacket(getTexturePackChangePacket(url));
+	
 	private Packet getTexturePackChangePacket(String url) {
 		Packet250CustomPayload packet = new Packet250CustomPayload();
 
@@ -129,5 +129,5 @@ public class TexturePackChanger extends JavaPlugin implements Listener{
 		packet.tag = "MC|TPack"; //set the channel
 
 		return packet;
-	}
+	}*/
 }
